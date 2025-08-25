@@ -36,7 +36,7 @@ Este projeto foi desenvolvido para fins de estudo pessoal, com o objetivo de tre
 ### String de conexão JDBC
 
 A configuração da conexão JDBC está centralizada na classe `ConnectionFactory`  
-Caminho: `src/main/java/br/com/renan/dao/jdbc/ConnectionFactory.java`
+Caminho: `src/main/java/br/com/usuario/dao/jdbc/ConnectionFactory.java`
 
 Exemplo de configuração:
 ```java
