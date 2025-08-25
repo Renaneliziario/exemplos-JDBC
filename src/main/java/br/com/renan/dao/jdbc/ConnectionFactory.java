@@ -7,8 +7,8 @@ import java.sql.SQLException;
 public class ConnectionFactory {
     // Não armazenar a conexão como estático - cada thread deve ter sua própria conexão
     private static final String URL = "jdbc:postgresql://localhost:5432/vendas_onlinedb";
-    private static final String USER = "renan";
-    private static final String PASSWORD = "admin";
+    private static final String USER = "seuusuario";
+    private static final String PASSWORD = "suasenha";
     
     // Bloco estático para registrar o driver (opcional para JDBC 4.0+)
     static {
