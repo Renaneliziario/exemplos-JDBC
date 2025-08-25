@@ -9,6 +9,7 @@ Este projeto foi desenvolvido para fins de estudo pessoal, com o objetivo de tre
 - **PostgreSQL** (banco de dados relacional)
 - **Driver JDBC do PostgreSQL** ([Download](https://jdbc.postgresql.org/download.html))
 - **Spring Tool Suite** (IDE utilizada para desenvolvimento)
+- **Docker** (utilizado para levantar o banco de dados PostgreSQL)
 
 ## Estrutura do projeto
 
@@ -17,7 +18,7 @@ Este projeto foi desenvolvido para fins de estudo pessoal, com o objetivo de tre
 
 ## Banco de dados e conexão
 
-- **Banco**: PostgreSQL
+- **Banco**: PostgreSQL (em ambiente Docker)
 - **Script para criar tabelas de exemplo**:
   ```sql
   CREATE TABLE cliente (
@@ -33,16 +34,17 @@ Este projeto foi desenvolvido para fins de estudo pessoal, com o objetivo de tre
   );
   ```
 
+
 ### String de conexão JDBC
 
 A configuração da conexão JDBC está centralizada na classe `ConnectionFactory`  
-Caminho: `src/main/java/br/com/usuario/dao/jdbc/ConnectionFactory.java`
+Caminho: `src/main/java/br/com/renan/dao/jdbc/ConnectionFactory.java`
 
 Exemplo de configuração:
 ```java
 private static final String URL = "jdbc:postgresql://localhost:5432/vendas_onlinedb";
-private static final String USER = "seuusuario";
-private static final String PASSWORD = "suasenha";
+private static final String USER = "renan";
+private static final String PASSWORD = "admin";
 
 public static Connection getConnection() throws SQLException {
     return DriverManager.getConnection(URL, USER, PASSWORD);
@@ -52,9 +54,9 @@ As classes DAO, como `ClienteDAO` e `ProdutoDAO`, utilizam o método `getConnect
 
 ## Como executar os exemplos
 
-1. Instale o PostgreSQL em sua máquina e crie um banco de dados para testes.
+1. Suba o PostgreSQL com Docker usando o comando acima.
 2. Baixe o driver JDBC do PostgreSQL e adicione ao seu projeto.
-3. Modifique os dados de conexão na classe `ConnectionFactory` conforme seu ambiente.
+3. Modifique os dados de conexão na classe `ConnectionFactory` conforme seu ambiente, se necessário.
 4. Compile e execute os arquivos `.java` para testar as operações de CRUD usando o **Spring Tool Suite**.
 5. (Opcional) Execute os testes unitários para validar a integração.
 
@@ -68,4 +70,8 @@ As classes DAO, como `ClienteDAO` e `ProdutoDAO`, utilizam o método `getConnect
 - [Documentação JDBC](https://docs.oracle.com/javase/tutorial/jdbc/)
 - [Documentação PostgreSQL](https://www.postgresql.org/docs/)
 - [Spring Tool Suite](https://spring.io/tools)
+- [Docker PostgreSQL](https://hub.docker.com/_/postgres)
 
+## Licença
+
+Este projeto está licenciado sob a licença MIT.
