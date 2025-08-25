@@ -43,8 +43,8 @@ Caminho: `src/main/java/br/com/renan/dao/jdbc/ConnectionFactory.java`
 Exemplo de configuração:
 ```java
 private static final String URL = "jdbc:postgresql://localhost:5432/vendas_onlinedb";
-private static final String USER = "renan";
-private static final String PASSWORD = "admin";
+private static final String USER = "seuusuario";
+private static final String PASSWORD = "suasenha";
 
 public static Connection getConnection() throws SQLException {
     return DriverManager.getConnection(URL, USER, PASSWORD);
